@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <style>
+
+      body {
+         font-size: 16px;
+         }
+      </style>
+      <style>
+         /*! CSS Used from: http://upper.adesings.com/cms/library/HugeResponsive/css/animate.css */
+         .animated {
+         -webkit-animation-duration: 1s;
+         animation-duration: 1s;
+         -webkit-animation-fill-mode: both;
+         animation-fill-mode: both;
+         }
+         .slideInDown {
+         -webkit-animation-name: slideInDown;
+         animation-name: slideInDown;
+         }
+         .slideInLeft {
+         -webkit-animation-name: slideInLeft;
+         animation-name: slideInLeft;
+         }
+         .slideInRight {
+         -webkit-animation-name: slideInRight;
+         animation-name: slideInRight;
+         }
+         /*! CSS Used from: http://upper.adesings.com/cms/library/HugeResponsive/css/bootstrap.min.css */
+         section {
+         display: block;
+         }
+         a {
+         background-color: transparent;
+         }
+         a:active,
+         a:hover {
+         outline: 0;
+         }
+         strong {
+         font-weight: 700;
+         }
+         sub,
+         sup {
+         position: relative;
+         font-size: 75%;
+         line-height: 0;
+         vertical-align: baseline;
+         }
+         sup {
+         top: -.5em;
+         }
+         sub {
+         bottom: -.25em;
+         }
+         hr {
+         height: 0;
+         -webkit-box-sizing: content-box;
+         -moz-box-sizing: content-box;
+         box-sizing: content-box;
+         }
+         @media print {
+         *,
+         :after,
+         :before {
+         color: #000!important;
+         text-shadow: none!important;
+         background: 0 0!important;
+         -webkit-box-shadow: none!important;
+         box-shadow: none!important;
+         }
+         a,
+         a:visited {
+         text-decoration: underline;
+         }
+         a[href]:after {
+         content: " (" attr(href) ")";
+         }
+         a[href^="#"]:after {
+         content: "";
+         }
+         h3 {
+         orphans: 3;
+         widows: 3;
+         }
+         h3 {
+         page-break-after: avoid;
+         }
+         }
+         * {
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         :after,
+         :before {
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         a {
+         color: #337ab7;
+         text-decoration: none;
+         }
+         a:focus,
+         a:hover {
+         color: #23527c;
+         text-decoration: underline;
+         }
+         a:focus {
+         outline: thin dotted;
+         outline: 5px auto -webkit-focus-ring-color;
+         outline-offset: -2px;
+         }
+         hr {
+         margin-top: 20px;
+         margin-bottom: 20px;
+         border: 0;
+         border-top: 1px solid #eee;
+         }
+         h3 {
+         font-family: inherit;
+         font-weight: 500;
+         line-height: 1.1;
+         color: inherit;
+         }
+         h3 {
+         margin-top: 20px;
+         margin-bottom: 10px;
+         }
+         h3 {
+         font-size: 24px;
+         }
+         .text-center {
+         text-align: center;
+         }
+         ul {
+         margin-top: 0;
+         margin-bottom: 10px;
+         }
+         .container {
+         padding-right: 15px;
+         padding-left: 15px;
+         margin-right: auto;
+         margin-left: auto;
+         }
+         @media (min-width:768px) {
+         .container {
+         width: 750px;
+         }
+         }
+         @media (min-width:992px) {
+         .container {
+         width: 970px;
+         }
+         }
+         @media (min-width:1200px) {
+         .container {
+         width: 1170px;
+         }
+         }
+         .row {
+         margin-right: -15px;
+         margin-left: -15px;
+         }
+         .col-sm-4 {
+         position: relative;
+         min-height: 1px;
+         padding-right: 15px;
+         padding-left: 15px;
+         }
+         @media (min-width:768px) {
+         .col-sm-4 {
+         float: left;
+         }
+         .col-sm-4 {
+         width: 33.33333333%;
+         }
+         }
+         .btn {
+         display: inline-block;
+         padding: 6px 12px;
+         margin-bottom: 0;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 1.42857143;
+         text-align: center;
+         white-space: nowrap;
+         vertical-align: middle;
+         -ms-touch-action: manipulation;
+         touch-action: manipulation;
+         cursor: pointer;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         background-image: none;
+         border: 1px solid transparent;
+         border-radius: 4px;
+         }
+         .btn:active:focus,
+         .btn:focus {
+         outline: thin dotted;
+         outline: 5px auto -webkit-focus-ring-color;
+         outline-offset: -2px;
+         }
+         .btn:focus,
+         .btn:hover {
+         color: #333;
+         text-decoration: none;
+         }
+         .btn:active {
+         background-image: none;
+         outline: 0;
+         -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+         box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+         }
+         .btn-default {
+         color: #333;
+         background-color: #fff;
+         border-color: #ccc;
+         }
+         .btn-default:active,
+         .btn-default:focus,
+         .btn-default:hover {
+         color: #333;
+         background-color: #e6e6e6;
+         border-color: #adadad;
+         }
+         .btn-default:active {
+         background-image: none;
+         }
+         .container:after,
+         .container:before,
+         .row:after,
+         .row:before {
+         display: table;
+         content: " ";
+         }
+         .container:after,
+         .row:after {
+         clear: both;
+         }
+         /*! CSS Used from: http://upper.adesings.com/cms/library/HugeResponsive/css/style.css */
+         h3 {
+         margin: 0 0 15px;
+         color: #313131;
+         font-weight: 400;
+         }
+         h3 {
+         font-size: 20px;
+         line-height: 24px;
+         }
+         a {
+         color: #31aae2;
+         text-decoration: none;
+         -webkit-transition: all .3s ease 0s;
+         -moz-transition: all .3s ease 0s;
+         -o-transition: all .3s ease 0s;
+         transition: all .3s ease 0;
+         }
+         a,
+         a:active,
+         a:focus {
+         text-decoration: none;
+         outline: none;
+         }
+         a:hover,
+         a:focus {
+         text-decoration: none;
+         }
+         .btn {
+         padding: 10px 30px;
+         margin-bottom: 0;
+         font-size: 13px;
+         border-radius: 0;
+         text-transform: uppercase;
+         }
+         .btn-default {
+         color: #313131;
+         background-color: transparent;
+         border-color: #313131;
+         }
+         .btn-default:active,
+         .btn-default:focus,
+         .btn-default:hover {
+         color: #31aae2;
+         background-color: #fff;
+         border-color: #fff;
+         }
+         .btn:focus,
+         .btn:active:focus {
+         outline: none;
+         }
+         ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         }
+         .pricing-table-default {
+         border: 1px solid #f1f1f1;
+         border-radius: 6px;
+         }
+         .pricing-table-popular {
+         border: 1px solid #f1f1f1;
+         margin-top: 0;
+         border-radius: 6px;
+         }
+         @media (max-width: 766px) {
+         .pricing-table-default {
+         margin-bottom: 30px;
+         }
+         }
+         .popular-plan {
+         background-color: #fff;
+         border: 1px solid;
+         border-color: transparent;
+         padding: 5px 0;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .pricing-padding {
+         padding-left: 4px;
+         padding-right: 4px;
+         }
+         .blue-bg .popular-plan {
+         border-color: #31aae2;
+         color: #31aae2;
+         }
+         .pricing-head {
+         margin-bottom: 15px;
+         }
+         .pricing-head h3 {
+         font-size: 15px;
+         color: #fff;
+         margin: 0;
+         }
+         .pricing-head .price {
+         display: block;
+         line-height: 60px;
+         font-weight: 300;
+         }
+         .pricing-head .price sub {
+         font-size: 13px;
+         }
+         .pricing-head .btn {
+         border-radius: 6px;
+         background-color: #fff;
+         border-color: #fff;
+         text-transform: capitalize;
+         margin-bottom: 20px;
+         }
+         .pricing-head .btn:hover {
+         background-color: transparent;
+         color: #fff!important;
+         }
+         .pricing-head.green-bg .btn {
+         color: #73c8b7;
+         }
+         .pricing-head.blue-bg .btn {
+         color: #31aae2;
+         }
+         .pricing-head.violet-bg .btn {
+         color: #c183d6;
+         }
+         .pricing-list li {
+         display: block;
+         line-height: 40px;
+         }
+         .btn {
+         margin-bottom: 0;
+         border-radius: 0;
+         text-transform: uppercase;
+         text-align: center;
+         }
+         .btn:focus,
+         .btn:active:focus {
+         outline: none;
+         }
+         .ptb-100 {
+         padding-top: 100px;
+         padding-bottom: 100px;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .pricing-three-container {
+         max-width: 920px;
+         margin: 0 auto;
+         }
+         .pricing-section-three .pricing-table-default {
+         border: 1px solid #f1f1f1;
+         margin-top: 36px;
+         border-radius: 6px;
+         }
+         .pricing-section-three .pricing-table-popular {
+         border: 1px solid #f1f1f1;
+         margin-top: 0;
+         border-radius: 6px;
+         }
+         @media (max-width: 766px) {
+         .pricing-section-three .pricing-table-default {
+         margin-bottom: 30px;
+         }
+         }
+         .pricing-section-three .popular-plan {
+         background-color: #fff;
+         border: 1px solid;
+         border-color: transparent;
+         padding: 5px 0;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .pricing-section-three .pricing-padding {
+         padding-left: 4px;
+         padding-right: 4px;
+         }
+         .pricing-section-three .blue-bg .popular-plan {
+         border-color: #31aae2;
+         color: #31aae2;
+         }
+         .pricing-section-three .pricing-head {
+         color: #fff;
+         margin-bottom: 15px;
+         }
+         .pricing-section-three .pricing-head h3 {
+         font-size: 15px;
+         color: #fff;
+         padding: 30px 0;
+         margin: 0;
+         }
+         .pricing-section-three .pricing-head .price {
+         display: block;
+         font-size: 60px;
+         line-height: 60px;
+         font-weight: 300;
+         margin-bottom: 35px;
+         }
+         .pricing-section-three .pricing-head .price sub {
+         font-size: 13px;
+         }
+         .pricing-section-three .pricing-head .btn {
+         border-radius: 6px;
+         background-color: #fff;
+         border-color: #fff;
+         text-transform: capitalize;
+         margin-bottom: 20px;
+         padding: 9px 30px;
+         }
+         .pricing-section-three .pricing-head .btn:hover {
+         background-color: transparent;
+         color: #fff!important;
+         }
+         .pricing-section-three .pricing-head.green-bg .btn {
+         color: #73c8b7;
+         padding: 9px 30px;
+         }
+         .pricing-section-three .pricing-head.blue-bg .btn {
+         color: #31aae2;
+         }
+         .pricing-section-three .pricing-head.violet-bg .btn {
+         color: #c183d6;
+         }
+         .pricing-section-three .pricing-list {
+         margin-bottom: 35px;
+         }
+         .pricing-section-three .pricing-list li {
+         display: block;
+         line-height: 46px;
+         }
+         .pricing-section-three .pricing-list li:first-child {
+         font-size: 15px;
+         color: #313131;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .green-bg {
+         background: #73c8b7;
+         }
+         .blue-bg {
+         background: #31aae2;
+         }
+         .green-bg {
+         background: #73c8b7;
+         }
+         .blue-bg {
+         background: #31aae2;
+         }
+         .violet-bg {
+         background: #c183d6;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .green-bg {
+         background-color: #73c8b7;
+         }
+         .blue-bg {
+         background-color: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         .green-bg {
+         background: #73c8b7;
+         }
+         .blue-bg {
+         background: #31aae2;
+         }
+         .green-bg {
+         background: #73c8b7;
+         }
+         .blue-bg {
+         background: #31aae2;
+         }
+         .violet-bg {
+         background-color: #c183d6;
+         }
+         /*! CSS Used from: Embedded ; media=screen */
+         @media screen {
+         * {
+         margin: 0;
+         padding: 0;
+         }
+         }
+         /*! CSS Used keyframes */
+         @-webkit-keyframes slideInDown {
+         0% {
+         -webkit-transform: translate3d(0, -100%, 0);
+         transform: translate3d(0, -100%, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+         @keyframes slideInDown {
+         0% {
+         -webkit-transform: translate3d(0, -100%, 0);
+         transform: translate3d(0, -100%, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+         @-webkit-keyframes slideInLeft {
+         0% {
+         -webkit-transform: translate3d(-100%, 0, 0);
+         transform: translate3d(-100%, 0, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+         @keyframes slideInLeft {
+         0% {
+         -webkit-transform: translate3d(-100%, 0, 0);
+         transform: translate3d(-100%, 0, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+         @-webkit-keyframes slideInRight {
+         0% {
+         -webkit-transform: translate3d(100%, 0, 0);
+         transform: translate3d(100%, 0, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+         @keyframes slideInRight {
+         0% {
+         -webkit-transform: translate3d(100%, 0, 0);
+         transform: translate3d(100%, 0, 0);
+         visibility: visible;
+         }
+         100% {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         }
+         }
+      </style>
+
+   </head>
+   <body>
+      <div class="">
+         <!-- pricing-section-three start -->
+         <section class="pricing-section-three ptb-100" style="background-image: url('http://www.stardoll.adesings.com/images/444040bg.jpg');">
+            <div class="container">
+               <div class="pricing-three-container">
+                  <div class="row">
+                     <div class="col-sm-4 pricing-padding animated slideInLeft">
+                        <div class="pricing-table-default text-center">
+                           <div class="pricing-head green-bg">
+                              <h3>1 ay/month</h3>
+                              <span class="price"><sup><s>13</s>
+                              </sup>9.<sup style="font-size:30px;">99</sup><sub style="font-size:25px;">
+                              AZN</sub></span><a class="btn btn-default" href="login.php?order_id=1">İndi al</a>
+                              <hr>
+                              <ul class="pricing-list">
+                                 <li><span style="font-size: 18px; color: rgb(255, 255, 255);">1 aylıq SuperStar</span></li>
+                                 <li><strong><span style="font-size: 18px;">200</span></strong><span style="font-size: 18px;">
+                                    stardoları</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- /.pricing-table-wrapper -->
+                     </div>
+                     <!-- /.col-md-3 -->
+                     <div class="col-sm-4 pricing-padding animated slideInDown">
+                        <div class="pricing-table-popular text-center">
+                           <div class="pricing-head blue-bg">
+                              <div class="popular-plan">Çox alınan</div>
+                              <h3>3 ay/month</h3>
+                              <span class="price"><sup><s>27</s>
+                              </sup>19.<sup style="font-size:30px;">99</sup><sub style="font-size:25px;">
+                              AZN</sub></span><a class="btn btn-default" href="login.php?order_id=2">İndi al</a>
+                              <hr>
+                              <ul class="pricing-list">
+                                 <li><span style="font-size: 18px; color: rgb(255, 255, 255);">3 aylıq SuperStar</span></li>
+                                 <li><strong><span style="font-size: 18px;">600</span></strong><span style="font-size: 18px;">
+                                    stardoları</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- /.pricing-table-wrapper -->
+                     </div>
+                     <!-- /.col-md-3 -->
+                     <div class="col-sm-4 pricing-padding animated slideInRight">
+                        <div class="pricing-table-default text-center">
+                           <div class="pricing-head violet-bg">
+                              <h3>Yalnız Sd</h3>
+                              <span class="price"><sup><s>10</s>
+                              </sup>6.<sup style="font-size:30px;">99</sup><sub style="font-size:25px;">
+                              AZN</sub></span><a class="btn btn-default" href="login.php?order_id=3">İndi al</a>
+                              <hr>
+                              <ul class="pricing-list">
+                                 <li><strong><span style="font-size: 18px; color: rgb(255, 255, 255);">200</span></strong><span style="font-size: 18px; color: rgb(255, 255, 255);">
+                                    stardoları</span>
+                                 </li>
+                                 <li><br></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- /.pricing-table-wrapper -->
+                     </div>
+                     <!-- /.col-md-3 -->
+                  </div>
+                  <!-- /.row -->
+               </div>
+            </div>
+            <!-- /.container -->
+         </section>
+         <!-- pricing-section-three end -->
+      </div>
+   </body>
+</html>
